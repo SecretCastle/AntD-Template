@@ -8,9 +8,6 @@ import '../styles/fogcloud/base'
 import MainApp from 'routes/app'
 
 class App extends React.Component {
-
-  
-
   render(){
     const { match , location } = this.props;
 
@@ -21,7 +18,7 @@ class App extends React.Component {
 
     return (
       <div className="MultiContainerWrap">
-        <div className="app-inner">
+        <div className="app-inner app-container">
           <Route exact path={`${match.url}app`} component={MainApp} />
         </div>
       </div>

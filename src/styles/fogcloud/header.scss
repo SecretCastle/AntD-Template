@@ -1,0 +1,19 @@
+.header-container{
+  
+  .logo{
+    width: 150px;
+    text-align: center;
+    float: left;
+    color: #fff;
+    font-size: 32px;
+  }
+  .MenuWrap{
+    margin-left: 150px;
+    height: 64px;
+    line-height: 64px;
+    .menuItem{
+      width:100px;
+      text-align: center;
+    }
+  }
+}
