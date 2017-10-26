@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, withRouter, Redirect } from 'react-router-dom';
+import { Route, withRouter, Redirect, Link } from 'react-router-dom';
 //css
 import '../styles/fogcloud/base'
 
@@ -19,7 +19,7 @@ class App extends React.Component {
     return (
       <div className="MultiContainerWrap">
         <div className="app-inner app-container">
-          <Route exact path={`${match.url}app`} component={MainApp} />
+          <Route path={`${match.url}app`} component={MainApp} />
         </div>
       </div>
     )
