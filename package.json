@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --env=dev --progress --profile --colors --hot --inline",
+    "dev": "webpack-dev-server --env=dev --progress --profile --colors --hot --inline --port 4000",
     "build": "webpack --env=prod --progress --profile --colors",
     "start": "node tpIn.js"
   },

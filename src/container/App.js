@@ -1,8 +1,7 @@
 import React from 'react';
 import { Route, withRouter, Redirect, Link } from 'react-router-dom';
 //css
-import '../styles/fogcloud/base'
-
+import '../styles/fogcloud/base';
 
 //components
 import MainApp from 'routes/app'
