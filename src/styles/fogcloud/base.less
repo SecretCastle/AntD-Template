@@ -1,5 +1,6 @@
-@import '../base/antd.css';
-@import 'header.scss';
+
+@import './header.less';
+@import './sider.less';
 
 html,
 body,
@@ -91,7 +92,8 @@ video {
 
 #v3app,
 .app-container,
-.app-inner-container{
+.app-inner-container,
+.app-inner-out-container{
   height: 100%;
   position: relative;
 }
@@ -105,4 +107,13 @@ video {
   padding: 24px;
   background: #fff;
   position: relative;
+  margin-left: 180px;
+  box-sizing: border-box;
+}
+
+.app-inner-out-container{
+  padding: 24px;
+  background: #fff;
+  position: relative;
+  box-sizing: border-box;
 }
