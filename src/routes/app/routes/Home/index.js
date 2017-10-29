@@ -31,12 +31,8 @@ class Home extends React.Component {
                             {'app-inner-container':this.state.isShowMenu}
                         )
                     }>
-
-                <MyTab show={"3"}/>
-
-                <Button type="primary" onClick={this.showHideMenu}>点击切换Menu</Button>
+                    {/* <Button type="primary" onClick={this.showHideMenu}>点击切换Menu</Button> */}
                 </Content>
-                
             </Layout>
         )
     }

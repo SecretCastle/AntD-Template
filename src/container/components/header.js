@@ -15,10 +15,13 @@ class MyHeader extends React.Component {
                 mode="horizontal"
                 className="menu-wrap"
                 >
-                <Item className="menuItem"><Link to={`${match.url}`}>首页</Link></Item>
-                <Item className="menuItem"><Link to={`${match.url}/index`}>产品</Link></Item>
-                <Item className="menuItem"><Link to={`${match.url}/index2`}>首页</Link></Item>
-                <Item className="menuItem">首页</Item>
+                    <Item className="menuItem"><Link to={`${match.url}`}>首页</Link></Item>
+                    <Item className="menuItem"><Link to={`${match.url}/product`}>产品</Link></Item>
+                    <Item className="menuItem"><Link to={`${match.url}/application`}>应用</Link></Item>
+                    <Item className="menuItem"><Link to={`${match.url}/ability`}>能力</Link></Item>
+                    <Item className="menuItem"><Link to={`${match.url}/data`}>数据</Link></Item>
+                    <Item className="menuItem"><Link to={`${match.url}/customer`}>客户</Link></Item>
+                    <Item className="menuItem"><Link to={`${match.url}/business`}>业务</Link></Item>
                 </Menu>
             </Header>
         )

@@ -1,6 +1,9 @@
 
 @import './header.less';
 @import './sider.less';
+@import './main.less';
+
+@diyColor: rgb(31,144,230);
 
 html,
 body,
@@ -104,7 +107,7 @@ video {
 }
 
 .app-inner-container{
-  padding: 24px;
+  padding: 0 24px 24px;
   background: #fff;
   position: relative;
   margin-left: 180px;
@@ -112,8 +115,42 @@ video {
 }
 
 .app-inner-out-container{
-  padding: 24px;
+  padding: 24px 200px 24px;
   background: #fff;
   position: relative;
   box-sizing: border-box;
+}
+
+.app-container-left{
+  margin-left:  180px;
+}
+.breadarea{
+  height: 50px;
+  line-height: 50px;
+  margin: 0 185px;
+  padding-left: 15px;
+  position: relative;
+  font-size: 24px;
+  span{
+    font-size: 16px;
+    color: rgb(153, 153, 153);
+    a{
+      color: rgb(153, 153, 153);
+    }
+  }
+}
+
+.breadarea::before{
+  content: "";
+  width: 5px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: 15px;
+  background: rgb(41, 187, 156);
+}
+
+.diyColor {
+  background: @diyColor;
+  border-color: @diyColor;
 }
