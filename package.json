@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --env=dev --progress --profile --colors --hot --inline",
+    "dev": "webpack-dev-server --env=dev --progress --profile --colors --hot --inline --port 3000",
     "build": "webpack --env=prod --progress --profile --colors",
     "start": "node tpIn.js"
   },
@@ -45,6 +45,8 @@
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
     "react-router-dom": "^4.2.2"
   },
   "theme": {
