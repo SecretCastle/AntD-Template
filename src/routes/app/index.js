@@ -23,20 +23,20 @@ class MainApp extends React.Component {
       <Layout className="app-container">
         <BackTop visibilityHeight={100}/>
         <MyHeader url={`${match.url}`} value="SHOW" />
-        <LeftNav />
-        <Layout
-          className={
-            ClassNames(
-              "app-container-top",
-              {'app-container-left': MenuShow},
-              {'app-container': !MenuShow}
-            )
-          }>
-          <BreadCommon />
-          <Layout style={{overflow:'scroll'}}>
-            <Route exact path={`${match.url}`} component={Home} />
-            <Route path={`${match.url}/product`} component={Product}/>
-            <Route path={`${match.url}/ability`} component={Ability}/>
+        <Layout className="app-container ant-layout-has-sider">
+          <LeftNav />
+          <Layout
+            className={
+              ClassNames(
+                'app-container'
+              )
+            }>
+            <BreadCommon />
+            <Layout style={{overflow:'scroll'}}>
+              <Route exact path={`${match.url}`} component={Home} />
+              <Route path={`${match.url}/product`} component={Product}/>
+              <Route path={`${match.url}/ability`} component={Ability}/>
+            </Layout>
           </Layout>
         </Layout>
       </Layout>

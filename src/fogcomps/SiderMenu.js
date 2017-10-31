@@ -15,7 +15,7 @@ class LeftSide extends React.Component {
     render() {
         return(
             <Sider 
-                className={this.props.visible?"sider-container":"hide" }
+                className={this.props.visible ? "sider-container":"hide" }
             >
             <Menu
               mode="inline"
@@ -46,9 +46,8 @@ const getSiderVisible = (filter) => {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state.SiderVisibility.visibilityFilter)
   return {
-      visible : getSiderVisible(state.SiderVisibility.visibilityFilter)
+      visible : getSiderVisible(state.Sider.sideState)
   }
 }
 

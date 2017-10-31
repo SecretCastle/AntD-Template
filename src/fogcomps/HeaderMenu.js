@@ -11,7 +11,14 @@ const { Item } = Menu;
 
 class MyHeader extends React.Component {
   componentDidMount() {
-    this.props.dispatch(setSiderVisibility('SHOW'));
+    const {location} = this.props;
+    console.log(location);
+    if(location.pathname === '/app'){
+      this.props.dispatch(setSiderVisibility('SHOW'));
+    }else{
+      this.props.dispatch(setSiderVisibility('HIDE'));
+    }
+    
   }
   render() {
     const { url } = this.props;
@@ -70,4 +77,4 @@ const mapDispatchToProps = (state) => {
   }
 }
 
-export default connect(mapDispatchToProps)(MyHeader);
+export default connect(mapDispatchToProps)(withRouter(MyHeader));
