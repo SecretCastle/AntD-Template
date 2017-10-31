@@ -1,0 +1,605 @@
+{
+    "app":{
+        "menuitem":"首页",
+        "path":"/app",
+        "en_menuitem":"Home",
+        "children":[
+            {
+                "menuitem":"控制台首页",
+                "path":"/app",
+                "en_menuitem":"Home",
+                "children":[]
+            },
+            {
+                "menuitem":"账户设置",
+                "path":"/app/financial",
+                "en_menuitem":"Account Setting",
+                "children":[]
+            },
+            {
+                "menuitem":"文档中心",
+                "path":"/app/doc",
+                "en_menuitem":"Document",
+                "children":[]
+            }
+        ]
+    },
+    "product":{
+        "menuitem":"产品",
+        "path":"/app/product",
+        "en_menuitem":"Product",
+        "children":[
+            {
+                "menuitem":"产品配置",
+                "path":"/app/product/pconfig",
+                "key": "pconfig",
+                "en_menuitem":"ProductConfig",
+                "children":[
+                    {
+                        "menuitem":"产品信息",
+                        "path":"/app/product/pconfig/pinfo",
+                        "en_menuitem":"Product Information",
+                        "children":[]
+                    },
+                    {
+                        "menuitem":"功能定义",
+                        "path":"/app/product/pconfig/pfunc",
+                        "en_menuitem":"Function Definition",
+                        "children":[]
+                    },
+                    {
+                        "menuitem":"硬件调试",
+                        "path":"/app/product/pconfig/hardware",
+                        "en_menuitem":"Hardware Debug",
+                        "children":[]
+                    },
+                    {
+                        "menuitem":"消息推送",
+                        "path":"/app/product/pconfig/pmessage",
+                        "en_menuitem":"Message",
+                        "children":[]
+                    },
+                    {
+                        "menuitem":"模组方案",
+                        "path":"/app/product/pconfig/pmodule",
+                        "en_menuitem":"Module Scheme",
+                        "children":[]
+                    }
+                ]
+            },
+            {
+                "menuitem":"固件更新(OTA)",
+                "path":"/app/product/ota",
+                "key": "ota",
+                "en_menuitem":"FirmwareUpdate(OTA)",
+                "children":[
+                    {
+                        "menuitem":"固件版本",
+                        "path":"/app/product/ota/version",
+                        "en_menuitem":"Firmware Version",
+                        "children":[]
+                    },
+                    {
+                        "menuitem":"升级任务",
+                        "path":"/app/product/ota/upgrade",
+                        "en_menuitem":"Upgrade",
+                        "children":[]
+                    }
+                ]
+            },
+            {
+                "menuitem":"文档和帮助",
+                "path":"/app/doc",
+                "key": "doc",
+                "en_menuitem":"Document&Help",
+                "children":[
+                    {
+                        "menuitem":"新手入门",
+                        "path":"/app/doc/start",
+                        "en_menuitem":"Getting Start",
+                        "children":[]
+                    },
+                    {
+                        "menuitem":"操作说明",
+                        "path":"/app/doc/instructions",
+                        "en_menuitem":"Instructions",
+                        "children":[]
+                    },
+                    {
+                        "menuitem":"技术手册",
+                        "path":"/app/doc/manual",
+                        "en_menuitem":"Technical Manual",
+                        "children":[]
+                    },
+                    {
+                        "menuitem":"FAQ",
+                        "path":"/app/doc/faq",
+                        "en_menuitem":"FAQ",
+                        "children":[]
+                    }
+                ]
+            }
+        ]
+    },
+    "application":{
+        "menuitem":"应用",
+        "path":"/app/application",
+        "en_menuitem":"Application",
+        "children":[
+            {
+                "menuitem":"应用管理",
+                "path":"/app/application/manage",
+                "key": "manage",
+                "en_menuitem":"Application Management",
+                "children":[
+                    {
+                        "menuitem":"应用信息",
+                        "path":"/app/application/manage/appinfo",
+                        "en_menuitem":"Application Information",
+                        "children":[]
+                    },
+                    {
+                        "menuitem":"应用设置",
+                        "path":"/app/application/manage/appsetting",
+                        "en_menuitem":"Application Setting",
+                        "children":[]
+                    },
+                    {
+                        "menuitem":"关联产品",
+                        "path":"/app/application/manage/apprelated",
+                        "en_menuitem":"Related Products",
+                        "children":[]
+                    },
+                    {
+                        "menuitem":"应用生成",
+                        "path":"/app/application/manage/appgeneration",
+                        "en_menuitem":"Application Generation",
+                        "children":[]
+                    },
+                    {
+                        "menuitem":"应用调试",
+                        "path":"/app/application/manage/appdebuge",
+                        "en_menuitem":"Application Debug",
+                        "children":[]
+                    }
+                ]
+            },
+            {
+                "menuitem":"文档和帮助",
+                "path":"/app/doc",
+                "key": "doc",
+                "en_menuitem":"Document&Help",
+                "children":[
+                    {
+                        "menuitem":"新手入门",
+                        "path":"/app/doc/start",
+                        "en_menuitem":"Getting Start",
+                        "children":[]
+                    },
+                    {
+                        "menuitem":"操作说明",
+                        "path":"/app/doc/instructions",
+                        "en_menuitem":"Instructions",
+                        "children":[]
+                    },
+                    {
+                        "menuitem":"技术手册",
+                        "path":"/app/doc/manual",
+                        "en_menuitem":"Technical Manual",
+                        "children":[]
+                    },
+                    {
+                        "menuitem":"FAQ",
+                        "path":"/app/doc/faq",
+                        "en_menuitem":"FAQ",
+                        "children":[]
+                    }
+                ]
+            }
+        ]
+    },
+    "ability":{
+        "menuitem":"能力",
+        "path":"/app/ability",
+        "en_menuitem":"Ability",
+        "children":[
+            {
+                "menuitem":"数据转存能力配置",
+                "path":"/app/ability/datatransfor",
+                "key": "datatransfor",
+                "en_menuitem":"Data Transfer Capability Configuration",
+                "children":[]
+            },
+            {
+                "menuitem":"厂商接口能力配置",
+                "path":"/app/ability/vendorinterface",
+                "key": "vendorinterface",
+                "en_menuitem":"Vendor Interface Capability Configuration",
+                "children":[]
+            },
+            {
+                "menuitem":"实时图表能力配置",
+                "path":"/app/ability/graph",
+                "key": "graph",
+                "en_menuitem":"Graph Capability Configuration",
+                "children":[]
+            },
+            {
+                "menuitem":"第三方服务能力配置",
+                "path":"/app/ability/service",
+                "key": "service",
+                "en_menuitem":"Third Party Service Capability Allocation",
+                "children":[]
+            }
+        ]
+    },
+    "data":{
+        "menuitem":"数据",
+        "path":"/app/data",
+        "en_menuitem":"Data",
+        "children":[
+            {
+                "menuitem":"全局统计",
+                "path":"/app/data/global",
+                "key": "global",
+                "en_menuitem":"Global Statistic",
+                "children":[
+                    {
+                        "menuitem":"激活统计",
+                        "path":"/app/data/global/activation",
+                        "en_menuitem":"Activation Statistics",
+                        "children":[] 
+                    },
+                    {
+                        "menuitem":"活跃统计",
+                        "path":"/app/data/global/actives",
+                        "en_menuitem":"Active Statistics",
+                        "children":[] 
+                    },
+                    {
+                        "menuitem":"地域统计",
+                        "path":"/app/data/global/regional",
+                        "en_menuitem":"Regional Statistics",
+                        "children":[] 
+                    }
+                ]
+            },
+            {
+                "menuitem":"设备中心",
+                "path":"/app/data/device",
+                "key": "device",
+                "children":[
+                    {
+                        "menuitem":"设备地图",
+                        "path":"/app/data/device/dmap",
+                        "en_menuitem":"Device Map",
+                        "children":[]
+                    },
+                    {
+                        "menuitem":"设备列表",
+                        "path":"/app/data/device/dlist",
+                        "en_menuitem":"Device List",
+                        "children":[]
+                    },
+                    {
+                        "menuitem":"设备详情",
+                        "path":"/app/data/device/dinfo",
+                        "en_menuitem":"Device Infomation",
+                        "children":[]
+                    },
+                    {
+                        "menuitem":"设备分组",
+                        "path":"/app/data/device/dgroup",
+                        "en_menuitem":"Device Group",
+                        "children":[]
+                    }
+                ]
+            },
+            {
+                "menuitem":"客户信息",
+                "path":"/app/data/customerinfo",
+                "key": "customerinfo",
+                "en_menuitem":"Customer Information",
+                "children":[
+                    {
+                        "menuitem":"客户列表",
+                        "path":"/app/data/customerinfo/clist",
+                        "en_menuitem":"Customer List",
+                        "children":[]
+                    },
+                    {
+                        "menuitem":"客户信息",
+                        "path":"/app/data/customerinfo",
+                        "en_menuitem":"Customer Infomation",
+                        "children":[]
+                    }
+                ]
+            },
+            {
+                "menuitem":"文档和帮助",
+                "path":"/app/doc",
+                "key": "doc",
+                "en_menuitem":"Document&Help",
+                "children":[
+                    {
+                        "menuitem":"操作说明",
+                        "path":"/app/doc/instructions",
+                        "en_menuitem":"Instructions",
+                        "children":[]
+                    },
+                    {
+                        "menuitem":"FAQ",
+                        "path":"/app/doc/faq",
+                        "en_menuitem":"FAQ",
+                        "children":[]
+                    }
+                ]
+            }
+        ]
+    },
+    "customer":{
+        "menuitem":"客户",
+        "path":"/app/customer",
+        "en_menuitem":"Customer",
+        "children":[
+            {
+                "menuitem":"客户反馈",
+                "path":"/app/customer/feedback",
+                "key": "feedback",
+                "en_menuitem":"Customer Feedback",
+                "children":[]
+            },
+            {
+                "menuitem":"消息推送",
+                "path":"/app/customer/message",
+                "key": "message",
+                "en_menuitem":"Message",
+                "children":[]
+            }   
+        ]
+    },
+    "business":{
+        "menuitem":"业务",
+        "path":"/app/business",
+        "en_menuitem":"Business",
+        "children":[
+            {
+                "menuitem":"经销商管理",
+                "key": "dmanage",
+                "path":"/app/buisiness/dmanage",
+                "en_menuitem":"Dealer Management",
+                "children":[]
+            },
+            {
+                "menuitem":"出货管理",
+                "path":"/app/buisiness/smanage",
+                "key": "smanage",
+                "en_menuitem":"Shipping Management",
+                "children":[]
+            },
+            {
+                "menuitem":"串货管理",
+                "path":"/app/buisiness/gmanage",
+                "key": "gmanage",
+                "en_menuitem":"Goods Management",
+                "children":[]
+            }
+        ]
+    },
+    "menmber":{
+        "menuitem":"成员管理",
+        "path":"/app/member",
+        "en_menuitem":"Members Management",
+        "children":[
+            {
+                "menuitem":"成员列表",
+                "path":"/app/member/mlist",
+                "key": "mlist",
+                "en_menuitem":"Member List",
+                "children":[
+                    {
+                        "menuitem":"成员详情",
+                        "path":"/app/member/mlist/minfo",
+                        "en_menuitem":"Member Infomation",
+                        "children":[]
+                    },
+                    {
+                        "menuitem":"添加成员",
+                        "path":"/app/member/mlist/addmem",
+                        "en_menuitem":"Add Member",
+                        "children":[]
+                    }
+                ]
+            },
+            {
+                "menuitem":"文档和帮助",
+                "path":"/app/doc",
+                "key": "doc",
+                "en_menuitem":"Document&Help",
+                "children":[
+                    {
+                        "menuitem":"职能说明",
+                        "path":"/app/doc/instructions",
+                        "en_menuitem":"Instructions",
+                        "children":[]
+                    }
+                ]
+            }
+        ]
+    },
+    "financial":{
+        "menuitem":"财务中心",
+        "path":"/app/financial",
+        "en_menuitem":"Financial Center",
+        "children":[
+            {
+                "menuitem":"概览",
+                "path":"/app/financial/overview",
+                "key": "overview",
+                "en_menuitem":"Overview",
+                "children":[]
+            },
+            {
+                "menuitem":"价格",
+                "path":"/app/financial/price",
+                "key": "price",
+                "en_menuitem":"Price",
+                "children":[]
+            },
+            {
+                "menuitem":"账单",
+                "path":"/app/financial/clist",
+                "key": "clist",
+                "en_menuitem":"Check List",
+                "children":[]
+            },
+            {
+                "menuitem":"发票",
+                "path":"/app/financial/invoice",
+                "key": "invoice",
+                "en_menuitem":"Invoice",
+                "children":[]
+            },
+            {
+                "menuitem":"设置",
+                "path":"/app/financial/setting",
+                "key": "setting",
+                "en_menuitem":"Setting",
+                "children":[]
+            }
+        ]
+    },
+    "workOrder":{
+        "menuitem":"工单",
+        "path":"/app/workorder",
+        "en_menuitem":"WorkOrder",
+        "children":[
+            {
+                "menuitem":"我的工单",
+                "path":"/app/workorder/myorder",
+                "key": "myorder",
+                "en_menuitem":"My WorkOrder",
+                "children":[]
+            },
+            {
+                "menuitem":"进行中的工单",
+                "path":"/app/workorder/ongoing",
+                "key": "ongoing",
+                "en_menuitem":"Ongoing WorkOrder",
+                "children":[]
+            },
+            {
+                "menuitem":"已完成的工单",
+                "path":"/app/workorder/completed",
+                "key": "completed",
+                "en_menuitem":"Completed WorkOrder",
+                "children":[]
+            }
+        ]
+    },
+    "message":{
+        "menuitem":"消息中心",
+        "path":"/app/message",
+        "en_menuitem":"Message Center",
+        "children":[
+            {
+                "menuitem":"消息列表",
+                "path":"/app/message/list",
+                "key": "list",
+                "en_menuitem":"Message List",
+                "children":[]
+            },
+            {
+                "menuitem":"提醒设置",
+                "path":"/app/message/setting",
+                "key": "setting",
+                "en_menuitem":"Remind Set",
+                "children":[]
+            }   
+        ]
+    },
+    "journal":{
+        "menuitem":"日志中心",
+        "path":"/app/journal",
+        "en_menuitem":"Journal Center",
+        "children":[
+            {
+                "menuitem":"全部",
+                "path":"/app/journal/overview",
+                "key": "overview",
+                "en_menuitem":"Overview",
+                "children":[]
+            },
+            {
+                "menuitem":"产品操作",
+                "path":"/app/journal/poperation",
+                "key": "poperation",
+                "en_menuitem":"Product Operation",
+                "children":[]
+            },
+            {
+                "menuitem":"应用操作",
+                "path":"/app/journal/aoperation",
+                "key": "aoperation",
+                "en_menuitem":"Application Operation",
+                "children":[]
+            },
+            {
+                "menuitem":"能力操作",
+                "path":"/app/journal/aboperation",
+                "key": "aboperation",
+                "en_menuitem":"Ability Operation",
+                "children":[]
+            },
+            {
+                "menuitem":"财务操作",
+                "path":"/app/journal/foperation",
+                "key": "foperation",
+                "en_menuitem":"Financial Operation",
+                "children":[]
+            },
+            {
+                "menuitem":"成员操作",
+                "path":"/app/journal/moperation",
+                "key": "moperation",
+                "en_menuitem":"Member Operarion",
+                "children":[]
+            }
+        ]
+    },
+    "document":{
+        "menuitem":"文档中心",
+        "path":"/app/doc",
+        "en_menuitem":"Document Center",
+        "children":[
+            {
+                "menuitem":"新手入门",
+                "path":"/app/doc/start",
+                "key": "start",
+                "en_menuitem":"Getting Start",
+                "children":[]
+            },
+            {
+                "menuitem":"操作说明",
+                "path":"/app/doc/instructions",
+                "key": "instructions",
+                "en_menuitem":"Instructions",
+                "children":[]
+            },
+            {
+                "menuitem":"技术手册",
+                "path":"/app/doc/manuals",
+                "key": "manuals",
+                "en_menuitem":"Technical Manuals",
+                "children":[]
+            },
+            {
+                "menuitem":"FAQ",
+                "path":"/app/doc/faq",
+                "key": "faq",
+                "en_menuitem":"FAQ",
+                "children":[]
+            }
+        ]
+    }
+}

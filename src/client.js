@@ -5,7 +5,7 @@ import { createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import createHistory from 'history/createHashHistory';
 import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
-import reducers from './reducers';
+import reducers from './redux/reducers';
 
 import App  from './container/App';
 
@@ -25,7 +25,6 @@ render(
         <Route path="/" component={App} />
       </Switch>
     </ConnectedRouter>
-  </Provider>
-  ,
+  </Provider>,
   document.getElementById('v3app')
 )

@@ -1,37 +1,31 @@
+/* import react */
 import React from 'react';
-import { Route, withRouter, Link } from 'react-router-dom';
+import { Route , withRouter, Link } from 'react-router-dom';
+/* import antd UI */
 import { Layout, Menu, Breadcrumb } from 'antd';
-import HeaderMenu from '../../container/HeaderClick';
-import SiderMenu from '../../container/SiderVisibility';
 const { Header, Content, Footer, Sider } = Layout;
 const { Item } = Menu;
-
-import Demo from './routes/home/pages/demo'
-import Demo2 from './routes/demo2';
+/* import antd component */
+import Home from './routes/Home';
+import Product from './routes/Product';
+import MyHeader from 'fogcomp/HeaderMenu';
+import LeftNav from 'fogcomp/SiderMenu';
+import BreadCommon from 'fogcomp/BreadCommon';
 
 class MainApp extends React.Component {
-  
-  render() {
+  render(){
     const { match } = this.props;
-    return (
+    return(
       <Layout className="app-container">
-        <HeaderMenu url={`${match.url}`} value="HIDE" />
-        <Layout className="app-container">
-          <Sider 
-            className="sider-container"
-            width={180}
-          >
-            <SiderMenu />
-          </Sider>
-          <Layout>
-            <Header className="content-header">Header</Header>
-            <Content className="app-inner-container">              
-              <Route exact path={`${match.url}/index`} component={Demo} />
-              <Route exact path={`${match.url}/index2`} component={Demo2} />             
-            </Content>
-            <Footer className="content-footer">CopyRight @ 庆科云 2012 - 2017</Footer>
-          </Layout>
-        </Layout>
+          <MyHeader url={`${match.url}`} value="SHOW" />
+          <Layout className="app-container ant-layout-has-sider">
+              <LeftNav />
+              <Layout className="app-container">
+                  <BreadCommon />
+                  <Route exact path={`${match.url}`} component={Home} />
+                  <Route exact path={`${match.url}/product`} component={Product}/>
+              </Layout>
+          </Layout>  
       </Layout>
     )
   }

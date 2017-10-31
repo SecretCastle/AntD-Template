@@ -1,10 +1,12 @@
 import React from 'react';
-import { Route, withRouter, Redirect, Link } from 'react-router-dom';
+import { Route, withRouter, Redirect, Link, Switch} from 'react-router-dom';
 //css
-import '../styles/fogcloud/base';
+import 'antd/dist/antd.less';
+import '../styles/fogcloud/base.less';
 
 //components
 import MainApp from 'routes/app'
+import NoMatch from 'routes/404'
 
 class App extends React.Component {
   render(){
@@ -18,7 +20,10 @@ class App extends React.Component {
     return (
       <div className="MultiContainerWrap">
         <div className="app-inner app-container">
-          <Route path={`${match.url}app`} component={MainApp} />
+          <Switch>
+            <Route path={`${match.url}app`} component={MainApp} />
+            <Route exact component={NoMatch}/>
+          </Switch>
         </div>
       </div>
     )

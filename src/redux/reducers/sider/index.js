@@ -12,7 +12,7 @@ const sider = (state = initialState, action) =>{
                 visibilityFilter: action.value
             })
         default:
-            return 'xxx';
+            return state;
     }
 }
 
