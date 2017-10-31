@@ -17097,6 +17097,9 @@ video {
   font-style: normal;
   list-style: none;
 }
+*::-webkit-scrollbar {
+  display: none;
+}
 #v3app,
 .app-container,
 .app-inner-container,
