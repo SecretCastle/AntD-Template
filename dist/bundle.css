@@ -16874,6 +16874,7 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
 }
 .header-container {
   height: 50px;
+  min-width: 1500;
   background-color: #595e6c;
 }
 .header-container .logo {
@@ -16909,6 +16910,7 @@ li.ant-select-tree-treenode-disabled > .ant-select-tree-node-content-wrapper:hov
   position: relative;
   border-radius: 5px;
   width: 23%;
+  min-width: 250px;
   height: 140px;
   margin: 1% 2% 1% 0;
 }

@@ -12,7 +12,6 @@ const { Item } = Menu;
 class MyHeader extends React.Component {
   componentDidMount() {
     const {location} = this.props;
-    console.log(location);
     if(location.pathname === '/app'){
       this.props.dispatch(setSiderVisibility('SHOW'));
     }else{
