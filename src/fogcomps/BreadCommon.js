@@ -4,6 +4,12 @@ import Config from '../MenuConfig.json';
 import { withRouter, Link } from 'react-router-dom';
 const {Item} = Breadcrumb
 
+/**
+ * 
+ * 这里屏蔽deviceid
+ * 路由过滤掉deviceid
+ * 
+ */
 
 class BreadCommon extends React.Component{
     state = {
@@ -18,7 +24,14 @@ class BreadCommon extends React.Component{
     }  
 
     createBreadCrumbs(location){
-        const pathArr = location.pathname.split('/').filter( i => i )
+        //这里屏蔽deviceid
+        const pathArr = location.pathname.split('/').filter( i =>{
+            return i && i.length < 15
+        });
+        let newUrl = '';
+        pathArr.map(ele => {
+            newUrl += `/${ele}`
+        })
         if(pathArr.length === 1){
             //首页
             this.setState({
@@ -30,7 +43,7 @@ class BreadCommon extends React.Component{
             //只有一级  
             for(let items in Config[pathArr[1].toLowerCase()]){
                 if(items === 'path'){
-                    if(Config[pathArr[1].toLowerCase()][items] === location.pathname){
+                    if(Config[pathArr[1].toLowerCase()][items] === newUrl){
                         this.setState({
                             breadcrumb:[(
                                 <Item key={1}>
@@ -80,13 +93,11 @@ class BreadCommon extends React.Component{
                 i++;
             }
             ForItem.map( (ele ,index) => {
-                if(ele.path === location.pathname){
+                if(ele.path === newUrl){
                     newBreadCrumds.push(
                         (
                             <Item key={index + 1}>
-                                <Link to={ele.path}>
-                                    {ele.menuitem}
-                                </Link>
+                                {ele.menuitem}
                             </Item>
                         )
                     )

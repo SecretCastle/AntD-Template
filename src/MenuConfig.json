@@ -37,31 +37,36 @@
                 "children":[
                     {
                         "menuitem":"产品信息",
-                        "path":"/app/product/pconfig/pinfo",
+                        "path":"/app/product/pconfig",
+                        "key":"pinfo",
                         "en_menuitem":"Product Information",
                         "children":[]
                     },
                     {
                         "menuitem":"功能定义",
                         "path":"/app/product/pconfig/pfunc",
+                        "key":"pfunc",
                         "en_menuitem":"Function Definition",
                         "children":[]
                     },
                     {
                         "menuitem":"硬件调试",
                         "path":"/app/product/pconfig/hardware",
+                        "key":"hardware",
                         "en_menuitem":"Hardware Debug",
                         "children":[]
                     },
                     {
                         "menuitem":"消息推送",
                         "path":"/app/product/pconfig/pmessage",
+                        "key":"pmessage",
                         "en_menuitem":"Message",
                         "children":[]
                     },
                     {
                         "menuitem":"模组方案",
                         "path":"/app/product/pconfig/pmodule",
+                        "key":"pmodule",
                         "en_menuitem":"Module Scheme",
                         "children":[]
                     }
@@ -76,45 +81,15 @@
                     {
                         "menuitem":"固件版本",
                         "path":"/app/product/ota/version",
+                        "key":"version",
                         "en_menuitem":"Firmware Version",
                         "children":[]
                     },
                     {
                         "menuitem":"升级任务",
                         "path":"/app/product/ota/upgrade",
+                        "key":"upgrade",
                         "en_menuitem":"Upgrade",
-                        "children":[]
-                    }
-                ]
-            },
-            {
-                "menuitem":"文档和帮助",
-                "path":"/app/doc",
-                "key": "doc",
-                "en_menuitem":"Document&Help",
-                "children":[
-                    {
-                        "menuitem":"新手入门",
-                        "path":"/app/doc/start",
-                        "en_menuitem":"Getting Start",
-                        "children":[]
-                    },
-                    {
-                        "menuitem":"操作说明",
-                        "path":"/app/doc/instructions",
-                        "en_menuitem":"Instructions",
-                        "children":[]
-                    },
-                    {
-                        "menuitem":"技术手册",
-                        "path":"/app/doc/manual",
-                        "en_menuitem":"Technical Manual",
-                        "children":[]
-                    },
-                    {
-                        "menuitem":"FAQ",
-                        "path":"/app/doc/faq",
-                        "en_menuitem":"FAQ",
                         "children":[]
                     }
                 ]
@@ -135,63 +110,36 @@
                     {
                         "menuitem":"应用信息",
                         "path":"/app/application/manage/appinfo",
+                        "key":"appinfo",
                         "en_menuitem":"Application Information",
                         "children":[]
                     },
                     {
                         "menuitem":"应用设置",
                         "path":"/app/application/manage/appsetting",
+                        "key":"appsetting",
                         "en_menuitem":"Application Setting",
                         "children":[]
                     },
                     {
                         "menuitem":"关联产品",
                         "path":"/app/application/manage/apprelated",
+                        "key":"apprelated",
                         "en_menuitem":"Related Products",
                         "children":[]
                     },
                     {
                         "menuitem":"应用生成",
                         "path":"/app/application/manage/appgeneration",
+                        "key":"appgeneration",
                         "en_menuitem":"Application Generation",
                         "children":[]
                     },
                     {
                         "menuitem":"应用调试",
                         "path":"/app/application/manage/appdebuge",
+                        "key":"appdebuge",
                         "en_menuitem":"Application Debug",
-                        "children":[]
-                    }
-                ]
-            },
-            {
-                "menuitem":"文档和帮助",
-                "path":"/app/doc",
-                "key": "doc",
-                "en_menuitem":"Document&Help",
-                "children":[
-                    {
-                        "menuitem":"新手入门",
-                        "path":"/app/doc/start",
-                        "en_menuitem":"Getting Start",
-                        "children":[]
-                    },
-                    {
-                        "menuitem":"操作说明",
-                        "path":"/app/doc/instructions",
-                        "en_menuitem":"Instructions",
-                        "children":[]
-                    },
-                    {
-                        "menuitem":"技术手册",
-                        "path":"/app/doc/manual",
-                        "en_menuitem":"Technical Manual",
-                        "children":[]
-                    },
-                    {
-                        "menuitem":"FAQ",
-                        "path":"/app/doc/faq",
-                        "en_menuitem":"FAQ",
                         "children":[]
                     }
                 ]
@@ -247,18 +195,21 @@
                     {
                         "menuitem":"激活统计",
                         "path":"/app/data/global/activation",
+                        "key":"activation",
                         "en_menuitem":"Activation Statistics",
                         "children":[] 
                     },
                     {
                         "menuitem":"活跃统计",
                         "path":"/app/data/global/actives",
+                        "key":"actives",
                         "en_menuitem":"Active Statistics",
                         "children":[] 
                     },
                     {
                         "menuitem":"地域统计",
                         "path":"/app/data/global/regional",
+                        "key":"regional",
                         "en_menuitem":"Regional Statistics",
                         "children":[] 
                     }
@@ -272,24 +223,28 @@
                     {
                         "menuitem":"设备地图",
                         "path":"/app/data/device/dmap",
+                        "key":"dmap",
                         "en_menuitem":"Device Map",
                         "children":[]
                     },
                     {
                         "menuitem":"设备列表",
                         "path":"/app/data/device/dlist",
+                        "key":"dlist",
                         "en_menuitem":"Device List",
                         "children":[]
                     },
                     {
                         "menuitem":"设备详情",
                         "path":"/app/data/device/dinfo",
+                        "key":"dinfo",
                         "en_menuitem":"Device Infomation",
                         "children":[]
                     },
                     {
                         "menuitem":"设备分组",
                         "path":"/app/data/device/dgroup",
+                        "key":"dgroup",
                         "en_menuitem":"Device Group",
                         "children":[]
                     }
@@ -304,33 +259,15 @@
                     {
                         "menuitem":"客户列表",
                         "path":"/app/data/customerinfo/clist",
+                        "key":"clist",
                         "en_menuitem":"Customer List",
                         "children":[]
                     },
                     {
                         "menuitem":"客户信息",
                         "path":"/app/data/customerinfo",
+                        "key":"customerinfo",
                         "en_menuitem":"Customer Infomation",
-                        "children":[]
-                    }
-                ]
-            },
-            {
-                "menuitem":"文档和帮助",
-                "path":"/app/doc",
-                "key": "doc",
-                "en_menuitem":"Document&Help",
-                "children":[
-                    {
-                        "menuitem":"操作说明",
-                        "path":"/app/doc/instructions",
-                        "en_menuitem":"Instructions",
-                        "children":[]
-                    },
-                    {
-                        "menuitem":"FAQ",
-                        "path":"/app/doc/faq",
-                        "en_menuitem":"FAQ",
                         "children":[]
                     }
                 ]
@@ -400,27 +337,15 @@
                     {
                         "menuitem":"成员详情",
                         "path":"/app/member/mlist/minfo",
+                        "key":"minfo",
                         "en_menuitem":"Member Infomation",
                         "children":[]
                     },
                     {
                         "menuitem":"添加成员",
                         "path":"/app/member/mlist/addmem",
+                        "key":"addmem",
                         "en_menuitem":"Add Member",
-                        "children":[]
-                    }
-                ]
-            },
-            {
-                "menuitem":"文档和帮助",
-                "path":"/app/doc",
-                "key": "doc",
-                "en_menuitem":"Document&Help",
-                "children":[
-                    {
-                        "menuitem":"职能说明",
-                        "path":"/app/doc/instructions",
-                        "en_menuitem":"Instructions",
                         "children":[]
                     }
                 ]

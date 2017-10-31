@@ -11,9 +11,9 @@ class MyHeader extends React.Component {
             <Header className="header-container">
                 <div className="logo">logo</div>
                 <Menu 
-                theme="dark"
-                mode="horizontal"
-                className="menu-wrap"
+                    theme="dark"
+                    mode="horizontal"
+                    className="menu-wrap"
                 >
                     <Item className="menuItem"><Link to={`${match.url}`}>首页</Link></Item>
                     <Item className="menuItem"><Link to={`${match.url}/product`}>产品</Link></Item>

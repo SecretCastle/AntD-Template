@@ -6,16 +6,67 @@ import Form from 'antd/lib/form';
 import Inputs from 'antd/lib/input';
 import Button from 'antd/lib/button';
 import Cardz from 'fogcomp/Card';
+import {connect} from 'react-redux';
+import QueueAnim from 'rc-queue-anim';
+//sim
+import SimData from 'tools/sim.json';
+
 const RadioGroup = Radio.Group;
 const RadioButton = Radio.Button;
 const FormItem = Form.Item;
 
+
 class ProductList extends React.Component {
+    
+    state = {
+        data:SimData.stream
+    }
+
     changeType(e) {
-        console.log(e);
+        let data = []
+        switch(e.target.value){
+            case "all":
+                data = SimData.stream;
+                break;
+            case "develop":
+                data = SimData.stream.filter( ele => ele.status === 'develop');
+                break;
+            case "review":
+                data = SimData.stream.filter( ele => ele.status === 'review');
+                break;
+            case "dismissed":
+                data = SimData.stream.filter( ele => ele.status === 'dismissed');
+                break;
+            case "online":
+                data = SimData.stream.filter( ele => ele.status === 'online');
+                break;
+            case "deleted":
+                data = SimData.stream.filter( ele => ele.status === 'deleted');
+                break;
+            default:
+                data = SimData.stream
+                break;
+        }
+        this.setState({
+            data:data
+        })
     } 
 
+    onclickfn(e){
+        if(e === 'add'){
+
+        }else{
+            this.props.history.push(`${this.props.match.url}/pconfig/111111111111111111`)
+        }
+    }
+
+
     render() {
+        const {match} = this.props;
+        const {data} = this.state;
+        const Cardzs = data.map( (ele,index) => (
+            <Cardz key={index} data={ele} onClickFn={e => this.onclickfn(e)}/>
+        ))
         return (
             <div>
                 <div style={{height:35}}>
@@ -38,19 +89,15 @@ class ProductList extends React.Component {
                             <Button type="primary">搜索</Button>
                         </FormItem>
                     </Form>
-                    
                 </div>
-                <div className="cardwrap">
-                    <Cardz />
-                    <Cardz />
-                    <Cardz />
-                    <Cardz />
-                    <Cardz />
-                </div>
+                <QueueAnim className="cardwrap" type={['right', 'left']} ease={['easeOutQuart', 'easeInOutQuart']}>
+                    <Cardz type="add" onClickFn={e => this.onclickfn(e)}/>
+                    {Cardzs}
+                </QueueAnim>
             </div>
-            
         )
     }
 }
+
 
 export default ProductList;

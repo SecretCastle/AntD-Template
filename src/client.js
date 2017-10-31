@@ -6,7 +6,8 @@ import { Provider } from 'react-redux';
 import createHistory from 'history/createHashHistory';
 import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
 import reducers from './redux/reducers';
-
+import LocaleProvider from 'antd/lib/locale-provider';
+import enUS from 'antd/lib/locale-provider/en_US';
 import App  from './container/App';
 
 const history = createHistory();
@@ -19,12 +20,14 @@ const store = createStore(
 )
 
 render(
-  <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <Switch>
-        <Route path="/" component={App} />
-      </Switch>
-    </ConnectedRouter>
-  </Provider>,
+  <LocaleProvider locale={enUS}>
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <Switch>
+          <Route path="/" component={App} />
+        </Switch>
+      </ConnectedRouter>
+    </Provider>
+  </LocaleProvider>,
   document.getElementById('v3app')
 )
