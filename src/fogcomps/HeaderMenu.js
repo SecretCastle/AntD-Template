@@ -23,6 +23,7 @@ class MyHeader extends React.Component {
     const { url } = this.props;
     return (
       <Header className="header-container">
+        <div className="maxwrap">
         <div className="logo">logo</div>
         <Menu
           theme="dark"
@@ -65,6 +66,7 @@ class MyHeader extends React.Component {
           <Item key="customer" className="menuItem"><Link to={`${url}/customer`}>客户</Link></Item>
           <Item key="business" className="menuItem"><Link to={`${url}/business`}>业务</Link></Item>
         </Menu>
+        </div>
       </Header>
     )
   }

@@ -112,9 +112,12 @@ class BreadCommon extends React.Component{
     render(){
         return (
             <div className="breadarea">
-                <Breadcrumb>
-                    {this.state.breadcrumb}
-                </Breadcrumb>
+                <div className="maxwrap" style={{paddingLeft:10}}>
+                    <Breadcrumb>
+                        {this.state.breadcrumb}
+                    </Breadcrumb>
+                </div>
+                
             </div>
         )
     }

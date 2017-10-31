@@ -32,11 +32,15 @@ class MainApp extends React.Component {
               )
             }>
             <BreadCommon />
-            <Layout style={{overflow:'scroll'}}>
-              <Route exact path={`${match.url}`} component={Home} />
-              <Route path={`${match.url}/product`} component={Product}/>
-              <Route path={`${match.url}/ability`} component={Ability}/>
+            
+            <Layout style={{overflow:'scroll',backgroundColor:'#fff'}}>
+              <div className="maxwrap">
+                <Route exact path={`${match.url}`} component={Home} />
+                <Route path={`${match.url}/product`} component={Product}/>
+                <Route path={`${match.url}/ability`} component={Ability}/>
+              </div>
             </Layout>
+            
           </Layout>
         </Layout>
       </Layout>
