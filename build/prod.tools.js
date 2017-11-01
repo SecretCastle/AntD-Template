@@ -35,7 +35,7 @@ function run(){
             return writeHtml(res)
         }
     }).then(res => {
-        console.log(res);
+        console.log('Clean dist done');
     })
 }
 run();

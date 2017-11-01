@@ -5,6 +5,10 @@ import { Route, withRouter, Link } from 'react-router-dom';
 /* import antd UI */
 import Layout from 'antd/lib/layout';
 import Menu from 'antd/lib/menu';
+import Badge from 'antd/lib/badge';
+import Icon from 'antd/lib/icon';
+import DropDown from 'antd/lib/dropdown';
+
 /* import actions */
 import { setSiderVisibility } from '../redux/actions/sider';
 
@@ -23,51 +27,79 @@ class MyHeader extends React.Component {
   }
   render() {
     const { url } = this.props;
+    const menunotice = (
+        <Menu  theme="dark" mode="horizontal" className="menuDropDown"> 
+          <Item className="menuItem"><Link to={`${url}`}>文档</Link></Item>
+          <Item className="menuItem"><Link to={`${url}`}>文档</Link></Item>
+          <Item className="menuItem"><Link to={`${url}`}>文档</Link></Item>
+          <Item className="menuItem"><Link to={`${url}`}>文档</Link></Item>
+          <Item className="menuItem"><Link to={`${url}`}>文档</Link></Item>
+        </Menu>
+    );
     return (
       <Header className="header-container">
         <div className="maxwrap">
-        <div className="logo">logo</div>
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          className="menu-wrap"
-          onClick={(obj) => {
-            switch (obj.key) {
-              case 'home':
-                this.props.dispatch(setSiderVisibility('SHOW'));
-                break;
-              case 'product':
-                this.props.dispatch(setSiderVisibility('HIDE'));
-                break;
-              case 'application':
-                this.props.dispatch(setSiderVisibility('HIDE'));
-                break;
-              case 'ability':
-                this.props.dispatch(setSiderVisibility('HIDE'));
-                break;
-              case 'data':
-                this.props.dispatch(setSiderVisibility('SHOW'));
-                break;
-              case 'customer':
-                this.props.dispatch(setSiderVisibility('SHOW'));
-                break;
-              case 'business':
-                this.props.dispatch(setSiderVisibility('SHOW'));
-                break;
-              default:
-                break;
+          <div className="logo">logo</div>
+          <div className="header-right">
+            <div><a href={`#${url}`} style={{color:'#fff'}}>文档</a></div>
+            <div>
+              <DropDown overlay={menunotice} placement="bottomCenter">
+                <Badge count={5}>
+                  <Icon type="bell" style={{fontSize:18}}/>
+                </Badge>
+              </DropDown>
+            </div>
+            <div>
+              <DropDown overlay={menunotice} placement="bottomCenter">
+                <Badge>
+                  <Icon type="user" style={{fontSize:18}}/>
+                  <span style={{fontSize:18}}>admin</span>
+                </Badge>
+              </DropDown>
+            </div>
+          </div>
+          <Menu
+            theme="dark"
+            mode="horizontal"
+            className="menu-wrap"
+            onClick={(obj) => {
+              switch (obj.key) {
+                case 'home':
+                  this.props.dispatch(setSiderVisibility('SHOW'));
+                  break;
+                case 'product':
+                  this.props.dispatch(setSiderVisibility('HIDE'));
+                  break;
+                case 'application':
+                  this.props.dispatch(setSiderVisibility('HIDE'));
+                  break;
+                case 'ability':
+                  this.props.dispatch(setSiderVisibility('HIDE'));
+                  break;
+                case 'data':
+                  this.props.dispatch(setSiderVisibility('SHOW'));
+                  break;
+                case 'customer':
+                  this.props.dispatch(setSiderVisibility('SHOW'));
+                  break;
+                case 'business':
+                  this.props.dispatch(setSiderVisibility('SHOW'));
+                  break;
+                default:
+                  break;
+              }
             }
-          }
-          }
-        >
-          <Item key="home" className="menuItem"><Link to={`${url}`}>首页</Link></Item>
-          <Item key="product" className="menuItem"><Link to={`${url}/product`}>产品</Link></Item>
-          <Item key="application" className="menuItem"><Link to={`${url}/application`}>应用</Link></Item>
-          <Item key="ability" className="menuItem"><Link to={`${url}/ability`}>能力</Link></Item>
-          <Item key="data" className="menuItem"><Link to={`${url}/data`}>数据</Link></Item>
-          <Item key="customer" className="menuItem"><Link to={`${url}/customer`}>客户</Link></Item>
-          <Item key="business" className="menuItem"><Link to={`${url}/business`}>业务</Link></Item>
-        </Menu>
+            }
+          >
+            <Item key="home" className="menuItem"><Link to={`${url}`}>首页</Link></Item>
+            <Item key="product" className="menuItem"><Link to={`${url}/product`}>产品</Link></Item>
+            <Item key="application" className="menuItem"><Link to={`${url}/application`}>应用</Link></Item>
+            <Item key="ability" className="menuItem"><Link to={`${url}/ability`}>能力</Link></Item>
+            <Item key="data" className="menuItem"><Link to={`${url}/data`}>数据</Link></Item>
+            <Item key="customer" className="menuItem"><Link to={`${url}/customer`}>客户</Link></Item>
+            <Item key="business" className="menuItem"><Link to={`${url}/business`}>业务</Link></Item>
+          </Menu>
+          
         </div>
       </Header>
     )

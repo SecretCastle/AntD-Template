@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-
 var fs = require('fs')
 const pkgPath = path.resolve(__dirname, '../package.json')
 const pkg = fs.existsSync(pkgPath) ? require(pkgPath) : {}
@@ -124,6 +123,6 @@ module.exports = {
             filename: 'bundle.css',
             disable: false,
             allChunks: true
-        }),
+        })
     ]
 }

@@ -5,28 +5,28 @@ import Menu from 'antd/lib/menu';
 import BackTop from 'antd/lib/back-top';
 import { connect } from 'react-redux';
 import ClassNames from 'classnames';
-import Home from './routes/Home';
 import MyHeader from 'fogcomp/HeaderMenu';
 import LeftNav from 'fogcomp/SiderMenu';
 import BreadCommon from 'fogcomp/BreadCommon';
 import loadable from 'react-loadable';
-
+import Loading from 'fogcomp/Loading';
 const { Header, Content, Footer, Sider } = Layout;
 const { Item } = Menu;
 
 
-function LoadingComponent() {
-  return <div>Loading....</div>;
-}
 let AsynProduct = loadable({
   loader: () => import('./routes/Product'),
-  loading: LoadingComponent
+  loading: () => (<Loading />)
 })
-
 
 let AsynAbility = loadable({
   loader: () => import('./routes/Ability'),
-  loading: LoadingComponent
+  loading: () => (<Loading />)
+})
+
+let AsynHome = loadable({
+  loader: () => import('./routes/Home'),
+  loading: () => (<Loading />)
 })
 
 class MainApp extends React.Component {
@@ -45,22 +45,19 @@ class MainApp extends React.Component {
               )
             }>
             <BreadCommon />
-            
             <Layout style={{overflow:'scroll',backgroundColor:'#fff'}}>
               <div className="maxwrap">
-                <Route exact path={`${match.url}`} component={Home} />
+                <Route exact path={`${match.url}`} component={AsynHome} />
                 <Route path={`${match.url}/product`} component={AsynProduct}/>
                 <Route path={`${match.url}/ability`} component={AsynAbility}/>
               </div>
             </Layout>
-            
           </Layout>
         </Layout>
       </Layout>
     )
   }
 }
-
 
 function getStateFromRedux(state){
   return {

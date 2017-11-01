@@ -7,7 +7,7 @@
     "dev": "webpack-dev-server --env=dev --progress --profile --colors --hot --inline --port 3000",
     "build": "npm run test && webpack --env=prod --progress --profile --colors",
     "start": "node tpIn.js",
-    "test":"node ./build/prod.tools.js"
+    "test": "node ./build/prod.tools.js"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +23,7 @@
     "babel-preset-react-optimize": "^1.0.1",
     "babel-preset-stage-3": "^6.22.0",
     "classnames": "^2.2.5",
+    "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.26.2",
     "eslint": "^3.17.0",
     "eslint-loader": "^1.6.3",

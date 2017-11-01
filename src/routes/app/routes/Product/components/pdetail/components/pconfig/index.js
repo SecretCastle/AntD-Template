@@ -5,7 +5,7 @@ import Button from 'antd/lib/button';
 import Upload from 'antd/lib/upload';
 import Icon from 'antd/lib/icon';
 import Select from 'antd/lib/select';
-import Table from 'antd/lib/table'
+import Tablez from 'fogcomp/Tablez';
 
 class PConfig extends React.Component {
     render(){
@@ -104,7 +104,7 @@ class PConfig extends React.Component {
                     </Form.Item>
                     <h2>扩展属性</h2>
                     <div className="form-table">
-                        <Table columns={column} dataSource={datasource} pagination={false} bordered={true}/>
+                        <Tablez columns={column} dataSource={datasource} pagination={false} bordered={true}/>
                     </div>
                     <Form.Item {...buttomItemLayout} className="form-button">
                         <Button type="primary" style={{width:150}}>保存更改</Button>
