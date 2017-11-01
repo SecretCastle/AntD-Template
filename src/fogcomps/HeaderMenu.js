@@ -2,10 +2,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Route, withRouter, Link } from 'react-router-dom';
+/* import antd UI */
+import Layout from 'antd/lib/layout';
+import Menu from 'antd/lib/menu';
 /* import actions */
 import { setSiderVisibility } from '../redux/actions/sider';
-/* import antd UI */
-import { Layout, Menu, Breadcrumb } from 'antd';
+
 const { Header, Content, Footer, Sider } = Layout;
 const { Item } = Menu;
 

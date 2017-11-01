@@ -76,31 +76,41 @@ class BreadCommon extends React.Component{
                             )
                         )
                     }else{
+                        
                         newBreadCrumds.push(
                             (
                                 <Item key={0}>
-                                    <Link to={ForItem[i].path}>
-                                        {ForItem[i].pathname}
+                                    <Link to={ForItem[i-2].path}>
+                                        {ForItem[i-2].menuitem}
                                     </Link>
                                 </Item>
                             )
                         )
+                        if(pathArr[i] === ForItem[i-2].key){
+                            ForItem = ForItem[i-2].children
+                        }
                     }
                 }
-                if(pathArr[i] === ForItem['key']){
-                    ForItem = ForItem.children
-                }
+                
                 i++;
             }
+           
             ForItem.map( (ele ,index) => {
                 if(ele.path === newUrl){
-                    newBreadCrumds.push(
+                    // newBreadCrumds.push(
+                    //     (
+                    //         <Item key={index + 1}>
+                    //             {ele.menuitem}
+                    //         </Item>
+                    //     )
+                    // )
+                    newBreadCrumds =[(
                         (
                             <Item key={index + 1}>
                                 {ele.menuitem}
                             </Item>
                         )
-                    )
+                    )]
                 }   
             });
             this.setState({

@@ -5,7 +5,8 @@ import { Route, withRouter, Link } from 'react-router-dom';
 /* import actions */
 import { setSiderVisibility } from '../redux/actions/sider';
 /* import antd UI */
-import { Layout, Menu, Breadcrumb } from 'antd';
+import Layout from 'antd/lib/layout';
+import Menu from 'antd/lib/menu';
 const { Header, Content, Footer, Sider } = Layout;
 const { Item } = Menu; 
 

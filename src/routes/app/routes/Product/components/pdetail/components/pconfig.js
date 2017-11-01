@@ -1,13 +1,11 @@
 import React from 'react';
-import { 
-    Form, 
-    Input, 
-    Button, 
-    Upload, 
-    Icon, 
-    Select,
-    Table
-} from 'antd';
+import Form from 'antd/lib/form';
+import Input from 'antd/lib/input';
+import Button from 'antd/lib/button';
+import Upload from 'antd/lib/upload';
+import Icon from 'antd/lib/icon';
+import Select from 'antd/lib/select';
+import Table from 'antd/lib/table'
 
 class PConfig extends React.Component {
     render(){

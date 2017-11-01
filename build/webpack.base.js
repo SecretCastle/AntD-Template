@@ -19,16 +19,22 @@ if (pkg.theme && typeof pkg.theme === 'string') {
   theme = pkg.theme
 }
 
-console.log(theme);
 
 module.exports = {
-    entry: './src/client.js',
-    externals: {
-        jquery: 'window.$'
+    entry: {
+        bundle: './src/client.js',
+        vendor: [
+            'react',
+            'react-dom',
+            'classnames',
+            'react-router-dom',
+            'antd'
+        ]
     },
     output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, '../dist')
+        filename: '[name].[hash].js',
+        path: path.resolve(__dirname, '../dist'),
+        chunkFilename: '[name].[hash].js'
     },
     resolve: {
         extensions: ['.js', '.jsx', '.css', '.scss', 'less'],
@@ -43,7 +49,7 @@ module.exports = {
         rules: [{
             test: /\.js$/,
             loaders: ["babel-loader", "eslint-loader"],
-            exclude: /node_modules/
+            exclude: /node_modules/,
         }, 
         {
             test: /\.scss$/,

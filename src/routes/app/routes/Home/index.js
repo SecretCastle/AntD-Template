@@ -31,7 +31,6 @@ class Home extends React.Component {
                             {'app-inner-container':this.state.isShowMenu}
                         )
                     }>
-                    {/* <Button type="primary" onClick={this.showHideMenu}>点击切换Menu</Button> */}
                 </Content>
             </Layout>
         )
