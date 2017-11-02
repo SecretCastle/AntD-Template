@@ -34,7 +34,9 @@ module.exports = {
         extensions: ['.js', '.jsx', '.css', '.scss', 'less'],
         alias:{
             routes: path.resolve(__dirname,'../src/routes/'),
-            fogcomp: path.resolve(__dirname, '../src/fogcomps')
+            fogcomp: path.resolve(__dirname, '../src/fogcomps'),
+            reduxSrc: path.resolve(__dirname,'../src/redux'),
+            tools: path.resolve(__dirname,'../src/tools')
         }
     },
     module: {

@@ -3,71 +3,74 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route, withRouter, Link } from 'react-router-dom';
 /* import actions */
-import { setSiderVisibility } from '../redux/actions/sider';
+// import { setSiderVisibility } from '../redux/actions/sider';
 /* import antd UI */
 import { Layout, Menu, Breadcrumb } from 'antd';
 const { Header, Content, Footer, Sider } = Layout;
 const { Item } = Menu;
+/* import data */
+import Config from '../MenuConfig.json'
 
 class MyHeader extends React.Component {
+  state = {
+    menuList: []
+  }
+  /* 导航列表循环渲染函数 */
+  createHeaderMenuList() {
+    let MenuList = []; // 渲染列表数组
+    let labels = [];  // 读取json配置文件数组
+    for (let label in Config) {
+      labels.push(label)
+    }
+    labels.map((label) => {
+      MenuList.push((
+        <Item key={Config[label].en_menuitem} className="menuItem">
+          <Link to={Config[label].path}>
+            {Config[label].menuitem}
+          </Link>
+        </Item>
+      ))
+    })
+    this.setState({
+      menuList: MenuList
+    })
+  }
+
   componentDidMount() {
-    this.props.dispatch(setSiderVisibility('SHOW'));
+    const { location } = this.props;
+    /* 判断进入页面是否为首页，控制侧边栏显隐 */
+    // if (location.pathname === '/app') {
+    //   this.props.dispatch(setSiderVisibility('SHOW'));
+    // } else {
+    //   this.props.dispatch(setSiderVisibility('HIDE'));
+    // }
+    /* 导航列表循环渲染函数 */
+    this.createHeaderMenuList()
   }
   render() {
     const { url } = this.props;
     return (
       <Header className="header-container">
-        <div className="logo">logo</div>
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          className="menu-wrap"
-          onClick={(obj) => {
-            switch (obj.key) {
-              case 'home':
-                this.props.dispatch(setSiderVisibility('SHOW'));
-                break;
-              case 'product':
-                this.props.dispatch(setSiderVisibility('HIDE'));
-                break;
-              case 'application':
-                this.props.dispatch(setSiderVisibility('HIDE'));
-                break;
-              case 'ability':
-                this.props.dispatch(setSiderVisibility('HIDE'));
-                break;
-              case 'data':
-                this.props.dispatch(setSiderVisibility('SHOW'));
-                break;
-              case 'customer':
-                this.props.dispatch(setSiderVisibility('SHOW'));
-                break;
-              case 'business':
-                this.props.dispatch(setSiderVisibility('SHOW'));
-                break;
-              default:
-                break;
-            }
-          }
-          }
-        >
-          <Item key="home" className="menuItem"><Link to={`${url}`}>首页</Link></Item>
-          <Item key="product" className="menuItem"><Link to={`${url}/product`}>产品</Link></Item>
-          <Item key="application" className="menuItem"><Link to={`${url}/application`}>应用</Link></Item>
-          <Item key="ability" className="menuItem"><Link to={`${url}/ability`}>能力</Link></Item>
-          <Item key="data" className="menuItem"><Link to={`${url}/data`}>数据</Link></Item>
-          <Item key="customer" className="menuItem"><Link to={`${url}/customer`}>客户</Link></Item>
-          <Item key="business" className="menuItem"><Link to={`${url}/business`}>业务</Link></Item>
-        </Menu>
+        <div className="maxwrap">
+          <div className="logo">logo</div>
+          <Menu
+            theme="dark"
+            mode="horizontal"
+            className="menu-wrap"
+          >
+            {this.state.menuList}
+          </Menu>
+        </div>
       </Header>
     )
   }
 }
 
-const mapDispatchToProps = (state) => {
-  return {
+// const mapDispatchToProps = (state) => {
+//   return {
 
-  }
-}
+//   }
+// }
 
-export default connect(mapDispatchToProps)(MyHeader);
+// export default connect(mapDispatchToProps)(withRouter(MyHeader));
+export default withRouter(MyHeader);

@@ -8,7 +8,109 @@
         position: relative;
         border-radius: 5px;
         width: 23%;
-        height: 150px;
-        margin: 1% 1% 1% 0;
+        min-width: 250px;
+        height: 140px;
+        margin: 1% 2% 1% 0;
+        .infoarea{
+            border-bottom: 1px solid #eee;
+            padding: 10px;
+            .pic{
+                width: 75px;
+                height: 75px;
+                background: #eee;
+                img{
+                    width: 100%;
+                }
+            }
+            .info{
+                padding-left: 10px;
+                span{
+                    display: block;
+                    padding-bottom: 2px;
+                    color: rgb(152, 152, 164);
+                }
+                span:first-child{
+                    font-size: 16px;
+                    padding-bottom: 5px;
+                    color: rgb(102, 102, 102);
+                }
+            }
+        }
+        .tagarea{
+            justify-content: space-between;
+            padding: 0 10px;
+            .tag{
+                height: 43px;
+                line-height: 43px;
+                .tag-theme1{
+                    color: #fff;
+                    background: #108ee9;
+                }
+                .tag-theme2{
+                    color: #87d068;
+                    border-color: #87d068;
+                    background: #fff;
+                }
+                .tag-theme3{
+                    color: #2db7f5;
+                    border-color: #2db7f5;
+                    background: #fff;
+                }
+            }
+            .edit{
+                height: 43px;
+                line-height: 43px;
+                .threepoint{
+                    border: none;
+                }
+            }
+        }
+        .addCard{
+            text-align: center;
+            line-height: 140px;
+            font-size: 80px;
+            color: #eee;
+        }
+    }
+    .card:hover{
+        cursor: pointer;
+    }
+ 
+    .ant-card-body{
+        padding: 0;
+    }
+}
+
+
+/*form表单*/
+.form-container{
+    position: relative;
+    
+    h2{
+        position: relative;
+        padding-left: 10px;
+        margin-bottom: 25px;
+    }
+    h2::before{
+        content: "";
+        width: 5px; 
+        height: 20px;
+        position: absolute;
+        left: 0;
+        top: 3px;
+        background:rgb(31,144,230);
+    }
+    .upload-text{
+        font-size: 16px;
+    }
+    .upload-icon{
+        font-size: 18px;
+    }
+    .form-table{
+        padding: 0 200px;
+        
+    }
+    .form-button{
+        padding: 40px 0;
     }
 }

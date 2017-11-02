@@ -1,0 +1,49 @@
+{
+
+    "data":"devicelist",
+    "stream":[
+        {
+            "id":"111",
+            "name":"智能设备",
+            "status":"develop",
+            "type":"public"
+        },
+        {   
+            "id":"222",
+            "name":"智能设备",
+            "status":"review",
+            "type":"private"
+        },
+        {
+            "id":"333",
+            "name":"智能设备",
+            "status":"dismissed",
+            "type":"private"
+        },
+        {
+            "id":"444",
+            "name":"智能设备",
+            "status":"online",
+            "type":"public"
+        },
+        {
+            "id":"555",
+            "name":"智能设备",
+            "status":"deleted",
+            "type":"private"
+        },
+        {
+            "id":"666",
+            "name":"智能设备",
+            "status":"develop",
+            "type":"public"
+        },
+        {
+            "id":"777",
+            "name":"智能设备",
+            "status":"develop",
+            "type":"public"
+        }
+    ]
+    
+}

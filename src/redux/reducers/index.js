@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
-import SiderVisibility from './sider/index'
+import MenuFn from './children/menu';
+import Sider from './sider'
 
 const reducers = {
   routing: routerReducer,
-  SiderVisibility
+  MenuFn,
+  Sider
 }
 
 export default combineReducers(reducers)
