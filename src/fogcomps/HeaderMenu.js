@@ -8,9 +8,10 @@ import Menu from 'antd/lib/menu';
 import Badge from 'antd/lib/badge';
 import Icon from 'antd/lib/icon';
 import DropDown from 'antd/lib/dropdown';
-
+import Avator from 'antd/lib/avatar';
 /* import actions */
 import { setSiderVisibility } from '../redux/actions/sider';
+import HeaderNotice from './HeaderNotice';
 
 const { Header, Content, Footer, Sider } = Layout;
 const { Item } = Menu;
@@ -27,36 +28,32 @@ class MyHeader extends React.Component {
   }
   render() {
     const { url } = this.props;
-    const menunotice = (
-        <Menu  theme="dark" mode="horizontal" className="menuDropDown"> 
-          <Item className="menuItem"><Link to={`${url}`}>文档</Link></Item>
-          <Item className="menuItem"><Link to={`${url}`}>文档</Link></Item>
-          <Item className="menuItem"><Link to={`${url}`}>文档</Link></Item>
-          <Item className="menuItem"><Link to={`${url}`}>文档</Link></Item>
-          <Item className="menuItem"><Link to={`${url}`}>文档</Link></Item>
-        </Menu>
-    );
+
+    const menu = (
+      <Menu>
+        <Menu.Item>我的公司</Menu.Item>
+        <Menu.Item>成员管理</Menu.Item>
+        <Menu.Item>财务管理</Menu.Item>
+        <Menu.Item>工单中心</Menu.Item>
+        <Menu.Item>消息中心</Menu.Item>
+        <Menu.Item>日志中心</Menu.Item>
+        <Menu.Item>退出系统</Menu.Item>
+      </Menu>
+    )
+
     return (
       <Header className="header-container">
         <div className="maxwrap">
           <div className="logo">logo</div>
           <div className="header-right">
             <div><a href={`#${url}`} style={{color:'#fff'}}>文档</a></div>
-            <div>
-              <DropDown overlay={menunotice} placement="bottomCenter">
-                <Badge count={5}>
-                  <Icon type="bell" style={{fontSize:18}}/>
-                </Badge>
-              </DropDown>
-            </div>
-            <div>
-              <DropDown overlay={menunotice} placement="bottomCenter">
-                <Badge>
-                  <Icon type="user" style={{fontSize:18}}/>
-                  <span style={{fontSize:18}}>admin</span>
-                </Badge>
-              </DropDown>
-            </div>
+            <HeaderNotice />
+            <DropDown overlay={menu} trigger={['click']}>
+              <span className="right-user">
+                <Avator src="https://gw.alipayobjects.com/zos/rmsportal/lctvVCLfRpYCkYxAsiVQ.png" icon="user"/>
+                SecretCastle
+              </span>
+            </DropDown>
           </div>
           <Menu
             theme="dark"
