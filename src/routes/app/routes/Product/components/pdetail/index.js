@@ -7,7 +7,6 @@ import PConfig from './components/pconfig';
 
 const { Content } = Layout;
 
-
 class PDetail extends React.Component{
     componentWillMount(){
         const { dispatch } = this.props;

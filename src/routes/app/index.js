@@ -22,9 +22,9 @@ class MainApp extends React.Component {
     return(
       <Layout className="app-container">
         <BackTop visibilityHeight={100}/>
-        <MyHeader url={`${match.url}`} value="SHOW" />
+        <MyHeader url={`${match.url}`} />
         <Layout className="app-container ant-layout-has-sider">
-          <LeftNav />
+          <LeftNav/>
           <Layout
             className={
               ClassNames(
@@ -32,11 +32,15 @@ class MainApp extends React.Component {
               )
             }>
             <BreadCommon />
-            <Layout style={{overflow:'scroll'}}>
-              <Route exact path={`${match.url}`} component={Home} />
-              <Route path={`${match.url}/product`} component={Product}/>
-              <Route path={`${match.url}/ability`} component={Ability}/>
+            
+            <Layout style={{overflow:'scroll',backgroundColor:'#fff'}}>
+              <div className="maxwrap">
+                <Route exact path={`${match.url}`} component={Home} />
+                <Route path={`${match.url}/product`} component={Product}/>
+                <Route path={`${match.url}/ability`} component={Ability}/>
+              </div>
             </Layout>
+            
           </Layout>
         </Layout>
       </Layout>

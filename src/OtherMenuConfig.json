@@ -1,0 +1,206 @@
+{
+    "menmber":{
+        "menuitem":"成员管理",
+        "path":"/app/member",
+        "en_menuitem":"Members Management",
+        "children":[
+            {
+                "menuitem":"成员列表",
+                "path":"/app/member/mlist",
+                "key": "mlist",
+                "en_menuitem":"Member List",
+                "children":[
+                    {
+                        "menuitem":"成员详情",
+                        "path":"/app/member/mlist/minfo",
+                        "key":"minfo",
+                        "en_menuitem":"Member Infomation",
+                        "children":[]
+                    },
+                    {
+                        "menuitem":"添加成员",
+                        "path":"/app/member/mlist/addmem",
+                        "key":"addmem",
+                        "en_menuitem":"Add Member",
+                        "children":[]
+                    }
+                ]
+            }
+        ]
+    },
+    "financial":{
+        "menuitem":"财务中心",
+        "path":"/app/financial",
+        "en_menuitem":"Financial Center",
+        "children":[
+            {
+                "menuitem":"概览",
+                "path":"/app/financial/overview",
+                "key": "overview",
+                "en_menuitem":"Overview",
+                "children":[]
+            },
+            {
+                "menuitem":"价格",
+                "path":"/app/financial/price",
+                "key": "price",
+                "en_menuitem":"Price",
+                "children":[]
+            },
+            {
+                "menuitem":"账单",
+                "path":"/app/financial/clist",
+                "key": "clist",
+                "en_menuitem":"Check List",
+                "children":[]
+            },
+            {
+                "menuitem":"发票",
+                "path":"/app/financial/invoice",
+                "key": "invoice",
+                "en_menuitem":"Invoice",
+                "children":[]
+            },
+            {
+                "menuitem":"设置",
+                "path":"/app/financial/setting",
+                "key": "setting",
+                "en_menuitem":"Setting",
+                "children":[]
+            }
+        ]
+    },
+    "workOrder":{
+        "menuitem":"工单",
+        "path":"/app/workorder",
+        "en_menuitem":"WorkOrder",
+        "children":[
+            {
+                "menuitem":"我的工单",
+                "path":"/app/workorder/myorder",
+                "key": "myorder",
+                "en_menuitem":"My WorkOrder",
+                "children":[]
+            },
+            {
+                "menuitem":"进行中的工单",
+                "path":"/app/workorder/ongoing",
+                "key": "ongoing",
+                "en_menuitem":"Ongoing WorkOrder",
+                "children":[]
+            },
+            {
+                "menuitem":"已完成的工单",
+                "path":"/app/workorder/completed",
+                "key": "completed",
+                "en_menuitem":"Completed WorkOrder",
+                "children":[]
+            }
+        ]
+    },
+    "message":{
+        "menuitem":"消息中心",
+        "path":"/app/message",
+        "en_menuitem":"Message Center",
+        "children":[
+            {
+                "menuitem":"消息列表",
+                "path":"/app/message/list",
+                "key": "list",
+                "en_menuitem":"Message List",
+                "children":[]
+            },
+            {
+                "menuitem":"提醒设置",
+                "path":"/app/message/setting",
+                "key": "setting",
+                "en_menuitem":"Remind Set",
+                "children":[]
+            }   
+        ]
+    },
+    "journal":{
+        "menuitem":"日志中心",
+        "path":"/app/journal",
+        "en_menuitem":"Journal Center",
+        "children":[
+            {
+                "menuitem":"全部",
+                "path":"/app/journal/overview",
+                "key": "overview",
+                "en_menuitem":"Overview",
+                "children":[]
+            },
+            {
+                "menuitem":"产品操作",
+                "path":"/app/journal/poperation",
+                "key": "poperation",
+                "en_menuitem":"Product Operation",
+                "children":[]
+            },
+            {
+                "menuitem":"应用操作",
+                "path":"/app/journal/aoperation",
+                "key": "aoperation",
+                "en_menuitem":"Application Operation",
+                "children":[]
+            },
+            {
+                "menuitem":"能力操作",
+                "path":"/app/journal/aboperation",
+                "key": "aboperation",
+                "en_menuitem":"Ability Operation",
+                "children":[]
+            },
+            {
+                "menuitem":"财务操作",
+                "path":"/app/journal/foperation",
+                "key": "foperation",
+                "en_menuitem":"Financial Operation",
+                "children":[]
+            },
+            {
+                "menuitem":"成员操作",
+                "path":"/app/journal/moperation",
+                "key": "moperation",
+                "en_menuitem":"Member Operarion",
+                "children":[]
+            }
+        ]
+    },
+    "document":{
+        "menuitem":"文档中心",
+        "path":"/app/doc",
+        "en_menuitem":"Document Center",
+        "children":[
+            {
+                "menuitem":"新手入门",
+                "path":"/app/doc/start",
+                "key": "start",
+                "en_menuitem":"Getting Start",
+                "children":[]
+            },
+            {
+                "menuitem":"操作说明",
+                "path":"/app/doc/instructions",
+                "key": "instructions",
+                "en_menuitem":"Instructions",
+                "children":[]
+            },
+            {
+                "menuitem":"技术手册",
+                "path":"/app/doc/manuals",
+                "key": "manuals",
+                "en_menuitem":"Technical Manuals",
+                "children":[]
+            },
+            {
+                "menuitem":"FAQ",
+                "path":"/app/doc/faq",
+                "key": "faq",
+                "en_menuitem":"FAQ",
+                "children":[]
+            }
+        ]
+    }
+}
