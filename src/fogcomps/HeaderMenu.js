@@ -1,6 +1,5 @@
 /* import react */
 import React from 'react';
-import { connect } from 'react-redux';
 import { Route, withRouter, Link } from 'react-router-dom';
 /* import antd UI */
 import Layout from 'antd/lib/layout';
@@ -10,9 +9,7 @@ import Icon from 'antd/lib/icon';
 import DropDown from 'antd/lib/dropdown';
 import Avator from 'antd/lib/avatar';
 /* import actions */
-import { setSiderVisibility } from '../redux/actions/sider';
 import HeaderNotice from './HeaderNotice';
-
 const { Header, Content, Footer, Sider } = Layout;
 const { Item } = Menu;
 /* import data */
@@ -22,6 +19,7 @@ class MyHeader extends React.Component {
   state = {
     menuList: []
   }
+
   /* 导航列表循环渲染函数 */
   createHeaderMenuList() {
     let MenuList = []; // 渲染列表数组
@@ -45,17 +43,11 @@ class MyHeader extends React.Component {
 
   componentDidMount() {
     const { location } = this.props;
-    /* 判断进入页面是否为首页，控制侧边栏显隐 */
-    // if (location.pathname === '/app') {
-    //   this.props.dispatch(setSiderVisibility('SHOW'));
-    // } else {
-    //   this.props.dispatch(setSiderVisibility('HIDE'));
-    // }
     /* 导航列表循环渲染函数 */
     this.createHeaderMenuList()
   }
   render() {
-    const { url } = this.props;
+    const { url  } = this.props;
 
     const menu = (
       <Menu>
@@ -96,11 +88,4 @@ class MyHeader extends React.Component {
   }
 }
 
-// const mapDispatchToProps = (state) => {
-//   return {
-
-//   }
-// }
-
-// export default connect(mapDispatchToProps)(withRouter(MyHeader));
 export default withRouter(MyHeader);

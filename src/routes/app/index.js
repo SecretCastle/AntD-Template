@@ -31,13 +31,14 @@ let AsynHome = loadable({
 
 class MainApp extends React.Component {
   render(){
-    const { MenuShow, match, dispatch, history } = this.props;
+    const { match, dispatch, history, hasID , idz } = this.props;
+    console.log('主界面',this.props);
     return(
       <Layout className="app-container">
         <BackTop visibilityHeight={100}/>
         <MyHeader url={`${match.url}`} />
         <Layout className="app-container ant-layout-has-sider">
-          <LeftNav/>
+          <LeftNav hasID={hasID} idz={idz}/>
           <Layout
             className={
               ClassNames(
@@ -52,7 +53,6 @@ class MainApp extends React.Component {
                 <Route path={`${match.url}/ability`} component={AsynAbility}/>
               </div>
             </Layout>
-            
           </Layout>
         </Layout>
       </Layout>
@@ -60,10 +60,10 @@ class MainApp extends React.Component {
   }
 }
 
-function getStateFromRedux(state){
+function getParam(state){
   return {
-      MenuShow: state.MenuFn.isShow
+    hasID: state.CheckHasId.hasid,
+    idz: state.CheckHasId.id
   }
 }
-
-export default connect(getStateFromRedux)(withRouter(MainApp));
+export default connect(getParam)(withRouter(MainApp));

@@ -53,13 +53,12 @@ class ProductList extends React.Component {
     } 
 
     onclickfn(e){
+        const { dispatch } = this.props; 
         if(e === 'add'){
 
         }else{
-            this.props.history.push({
-                pathname:`${this.props.match.url}/pconfig`,
-                state:{id:'1111111'}
-            })
+            this.props.history.push(`${this.props.match.url}/detail/pconfig/11111111111111111111`)
+            
         }
     }
 
@@ -102,4 +101,4 @@ class ProductList extends React.Component {
     }
 }
 
-export default ProductList;
+export default connect()(ProductList);

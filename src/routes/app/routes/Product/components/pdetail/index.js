@@ -1,11 +1,11 @@
 import React from 'react';
 import Layout from 'antd/lib/layout';
 import { connect } from 'react-redux';
-import { ShowHideMenu } from 'reduxSrc/actions/menu/menu';
 import {Route} from 'react-router-dom';
 import loadable from 'react-loadable';
 import Loading from 'fogcomp/Loading';
 const { Content } = Layout;
+import {getParamId} from 'reduxSrc/actions/getParamId';
 
 const AsynPFunc = loadable({
     loader: () => import('./components/pfunc'),
@@ -24,16 +24,29 @@ const AsynPConfig = loadable({
 
 class PDetail extends React.Component{
     render() {
-        const {match,location} = this.props;
-        console.log(location);
         return(
             <div>
-                <Route exact path={`${match.url}`} component={AsynPConfig}/>
-                <Route  path={`${match.url}/pfunc`} component={AsynPFunc}/>   
-                <Route  path={`${match.url}/hardware`} component={AsynPHardwarre}/>     
+                <Route path={`/app/product/detail/pconfig/:id`} component={AsynPConfig}/>
+                <Route path={`/app/product/detail/pfunc/:id`} component={AsynPFunc}/>   
+                <Route path={`/app/product/detail/hardware/:id`} component={AsynPHardwarre}/>     
             </div>
         )
     }
+
+    componentDidMount(){
+        const {match, location, dispatch} = this.props;
+        if(match.params.id){
+            dispatch(
+                getParamId(
+                    {
+                        hasid: true, 
+                        id:'11111111111111111111'
+                    }
+                )
+            )
+        }
+    }
 }
+
 
 export default connect()(PDetail);

@@ -12,14 +12,17 @@ import Config from '../MenuConfig.json';
 import * as Utils from 'tools/util';
 
 class LeftSide extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             menuList: [],
             keys: [],  // 当前展开的 SubMenu 菜单项 key 数组
-            show: ''
+            show: '',
+            hasID: false,
+            idz:''
         }
     }
+
     /* 控制侧边栏显隐 */
     setterSiderMenu = (location) => {
         let Show,
@@ -38,12 +41,7 @@ class LeftSide extends React.Component {
     }
     /* 渲染侧边栏目录 */
     createSiderMenuList = (location) => {
-        let filterpath = Utils.filterPath(location.pathname, ['pid'])
-
-        let pathArr = location.pathname.split('/').filter( i => i);
-        pathArr.splice(pathArr.length - 1 , 1);
-       
-        
+        console.log(this.props.hasID, this.props.idz);
         let MenuList = [];
         let Keys = [];
         let labels = [];       
@@ -53,9 +51,13 @@ class LeftSide extends React.Component {
         for (let label in Config) {
             labels.push(label);
         }
+
+        let pathArr = location.pathname.split('/').filter( i => i);
+
+        
         labels.map((label) => {
             firstMenu = Config[label].children;
-            urlKey = filterpath.filterpath.split('/').filter(i => i)[1];
+            urlKey = location.pathname.split('/').filter(i => i)[1];
             if(urlKey == undefined || ("['financial','doc']").indexOf(urlKey) > -1){ // 首页路由地址处理
                 if (Config[label].path == '/app') { // 判断当前功能页面
                     if (firstMenu) { // 侧边栏存在一级目录
@@ -72,9 +74,16 @@ class LeftSide extends React.Component {
                                             className="menuItem"
                                             key={secObj.key}
                                         >
-                                            <Link to={secObj.path}>
-                                                {secObj.menuitem}
-                                            </Link>
+                                        {
+                                            this.props.hasID && this.props.idz ? 
+                                                <Link to={`${secObj.path}/${this.props.idz}`}>
+                                                    {secObj.menuitem}
+                                                </Link>
+                                                :
+                                                <Link to={`${secObj.path}`}> 
+                                                    {secObj.menuitem}
+                                                </Link>
+                                        }
                                         </Item>
                                     )
                                 }
@@ -100,9 +109,17 @@ class LeftSide extends React.Component {
                                         className="menuItem"
                                         key={secObj.key}
                                     >   
-                                        <Link to={`${secObj.path}`}>
-                                            {secObj.menuitem}
-                                        </Link>
+                                    {   
+                                        this.props.hasID && this.props.idz ? 
+                                            <Link to={`${secObj.path}/${this.props.idz}`}>
+                                                {secObj.menuitem}
+                                            </Link>
+                                            :
+                                            <Link to={`${secObj.path}`}> 
+                                                {secObj.menuitem}
+                                            </Link>
+                                    }
+                                        
                                     </Item>
                                 )
                             }
@@ -112,15 +129,16 @@ class LeftSide extends React.Component {
                     )
                 }
             }
-            this.setState({
-                menuList: MenuList,
-                keys: Keys
-            })
         })
-    }
+        this.setState({
+            menuList: MenuList,
+            keys: Keys
+        })
+    }    
+        
+
     componentDidMount () {
-        const { location, history } = this.props;
-        /* 侧边栏列表循环渲染函数 */
+        const { location, history , hasID , idz} = this.props;        
         this.createSiderMenuList(location);
         this.setterSiderMenu(location);
         /* 监听当前地址的变换 */
@@ -129,6 +147,11 @@ class LeftSide extends React.Component {
             this.setterSiderMenu(location);
         })
     }
+
+    componentWillRecevieProps(){
+        
+    }
+
     render() {
         return (
             <Sider
@@ -144,9 +167,17 @@ class LeftSide extends React.Component {
                 >
                     {this.state.menuList}
                 </Menu>
+                
             </Sider>
         )
     }
 }
 
-export default withRouter(LeftSide);
+function getParam(state){
+    return {
+        hasID : state.CheckHasId.hasid,
+        idz: state.CheckHasId.id
+    }
+}
+
+export default connect(getParam)(withRouter(LeftSide));

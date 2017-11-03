@@ -17,7 +17,6 @@ const store = createStore(
   undefined,
   compose(applyMiddleware(middleware))
 )
-
 //异步的
 const AsynApp = loadable({
   loader: () => import('./container/App'),

@@ -1,12 +1,10 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
-import MenuFn from './children/menu';
-import Sider from './sider'
+import CheckHasId from './getParamId'
 
 const reducers = {
   routing: routerReducer,
-  MenuFn,
-  Sider
+  CheckHasId
 }
 
 export default combineReducers(reducers)

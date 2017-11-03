@@ -6,6 +6,7 @@ import ClassNames from 'classnames';
 import loadable from 'react-loadable';
 import Loading from 'fogcomp/Loading';
 const { Content } = Layout;
+import {getParamId} from 'reduxSrc/actions/getParamId';
 
 const AsynProductDetail = loadable({
     loader: () => import('./components/pdetail'),
@@ -20,19 +21,23 @@ const AsynProductList = loadable({
 })
 
 
-
-
 class Product extends React.Component {
     render(){
         const {match} = this.props;
         return (
             <Content className="app-inner-out-container"> 
                 <Route exact path={`${match.url}`} component={AsynProductList}/>
-                <Route path={`${match.url}/pconfig`} component={AsynProductDetail}/>
-                <Route path={`${match.url}/ota`} component={AsynProductDetail}/>
+                <Route path={`/app/product/detail/:name/:id`} component={AsynProductDetail}/>
             </Content>
         )
     }
+    componentWillUnmount(){
+        const { dispatch } = this.props;
+        dispatch(getParamId({
+            hasid: false,
+            id: ''
+        }))
+    }
 }
 
-export default Product;
+export default connect()(Product);

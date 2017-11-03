@@ -42,41 +42,41 @@
         "children": [
             {
                 "menuitem": "产品配置",
-                "path": "/app/product/pconfig",
+                "path": "/app/product/detail",
                 "key": "pconfig",
                 "en_menuitem": "ProductConfig",
                 "children": [
                     {
                         "menuitem": "产品信息",
-                        "path": "/app/product/pconfig",
+                        "path": "/app/product/detail/pconfig",
                         "key": "pinfo",
                         "en_menuitem": "Product Information",
                         "children": []
                     },
                     {
                         "menuitem": "功能定义",
-                        "path": "/app/product/pconfig/pfunc",
+                        "path": "/app/product/detail/pfunc",
                         "key": "pfunc",
                         "en_menuitem": "Function Definition",
                         "children": []
                     },
                     {
                         "menuitem": "硬件调试",
-                        "path": "/app/product/pconfig/hardware",
+                        "path": "/app/product/detail/hardware",
                         "key": "hardware",
                         "en_menuitem": "Hardware Debug",
                         "children": []
                     },
                     {
                         "menuitem": "消息推送",
-                        "path": "/app/product/pconfig/pmessage",
+                        "path": "/app/product/detail/pmessage",
                         "key": "pmessage",
                         "en_menuitem": "Message",
                         "children": []
                     },
                     {
                         "menuitem": "模组方案",
-                        "path": "/app/product/pconfig/pmodule",
+                        "path": "/app/product/detail/pmodule",
                         "key": "pmodule",
                         "en_menuitem": "Module Scheme",
                         "children": []
