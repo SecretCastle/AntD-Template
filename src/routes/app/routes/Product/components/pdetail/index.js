@@ -24,7 +24,8 @@ const AsynPConfig = loadable({
 
 class PDetail extends React.Component{
     render() {
-        const {match} = this.props;
+        const {match,location} = this.props;
+        console.log(location);
         return(
             <div>
                 <Route exact path={`${match.url}`} component={AsynPConfig}/>

@@ -56,7 +56,10 @@ class ProductList extends React.Component {
         if(e === 'add'){
 
         }else{
-            this.props.history.push(`${this.props.match.url}/pconfig/111111111111111111`)
+            this.props.history.push({
+                pathname:`${this.props.match.url}/pconfig`,
+                state:{id:'1111111'}
+            })
         }
     }
 

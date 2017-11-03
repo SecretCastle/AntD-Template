@@ -9,6 +9,9 @@ import Tablez from 'fogcomp/Tablez';
 
 class PConfig extends React.Component {
     render(){
+
+        console.log(this.props);
+
         const formItemLayout = {
             labelCol: {
               xs: { span: 5 },

@@ -31,13 +31,13 @@ let AsynHome = loadable({
 
 class MainApp extends React.Component {
   render(){
-    const { MenuShow, match, dispatch } = this.props;
+    const { MenuShow, match, dispatch, history } = this.props;
     return(
       <Layout className="app-container">
         <BackTop visibilityHeight={100}/>
-        <MyHeader url={`${match.url}`} value="SHOW" />
+        <MyHeader url={`${match.url}`} />
         <Layout className="app-container ant-layout-has-sider">
-          <LeftNav />
+          <LeftNav/>
           <Layout
             className={
               ClassNames(
@@ -52,6 +52,7 @@ class MainApp extends React.Component {
                 <Route path={`${match.url}/ability`} component={AsynAbility}/>
               </div>
             </Layout>
+            
           </Layout>
         </Layout>
       </Layout>

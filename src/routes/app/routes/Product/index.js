@@ -19,14 +19,17 @@ const AsynProductList = loadable({
     loading: () => <Loading />
 })
 
+
+
+
 class Product extends React.Component {
     render(){
         const {match} = this.props;
         return (
             <Content className="app-inner-out-container"> 
                 <Route exact path={`${match.url}`} component={AsynProductList}/>
-                <Route path={`${match.url}/pconfig/:id`} component={AsynProductDetail}/>
-                <Route path={`${match.url}/ota/:id`} component={AsynProductDetail}/>
+                <Route path={`${match.url}/pconfig`} component={AsynProductDetail}/>
+                <Route path={`${match.url}/ota`} component={AsynProductDetail}/>
             </Content>
         )
     }
